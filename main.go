@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/bootdotdev/gator/internal/config"
-	"github.com/bootdotdev/gator/internal/database"
+	"github.com/shawnnongyiu/gator/internal/config"
+	"github.com/shawnnongyiu/gator/internal/database"
 	_ "github.com/lib/pq"
 )
 
@@ -38,6 +38,7 @@ func main() {
 	}
 	cmds.register("login", handlerLogin)
 	cmds.register("register", handlerRegister)
+	cmds.register("reset", handlerReset)
 
 	if len(os.Args) < 2 {
 		log.Fatal("Usage: cli <command> [args...]")
